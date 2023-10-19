@@ -1,0 +1,16 @@
+{
+  "$schema": "node_modules/lerna/schemas/lerna-schema.json",
+  "version": "7.74.0",
+  "npmClient": "pnpm",
+  "packages": [
+    "packages/typescript",
+    "packages/types",
+    "packages/utils",
+    "packages/core",
+    "packages/tracing-internal",
+    // "packages/replay-worker",
+    // "packages/replay"
+    "packages/integration-shims",
+    "packages/browser",
+  ]
+}

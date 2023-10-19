@@ -1,0 +1,31 @@
+{
+  "name": "@monitor-web/replay",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build/npm/esm/index.js",
+  "module": "build/npm/esm/index.js",
+  "types": "build/npm/types/index.d.ts",
+  "scripts": {
+    "build": "run-p build:transpile build:types",
+    "build:transpile": "rollup -c rollup.worker.config.js",
+    "build:types": "run-s build:types:core build:types:downlevel",
+    "build:types:core": "tsc -p tsconfig.types.json",
+    "build:types:downlevel": "pnpm downlevel-dts build/npm/types build/npm/types-ts3.8 --to ts3.8",
+    "clean": "rimraf build coverage .rpt2_cache sentry-browser-*.tgz"
+  },
+  "devDependencies": {
+    "@babel/core": "7.20.2",
+    "@sentry-internal/replay-worker": "1.0.0",
+    "@sentry-internal/rrweb": "2.0.1",
+    "@sentry-internal/rrweb-snapshot": "2.0.1",
+    "jsdom-worker": "0.2.1"
+  },
+  "dependencies": {
+    "@monitor-web/core": "1.0.0",
+    "@monitor-web/types": "1.0.0",
+    "@monitor-web/utils": "1.0.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

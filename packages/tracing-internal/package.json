@@ -1,0 +1,25 @@
+{
+  "name": "@monitor-web/tracing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build/cjs/index.js",
+  "module": "build/esm/index.js",
+  "types": "build/types/index.d.ts",
+  "scripts": {
+    "build": "run-p build:transpile build:types",
+    "build:transpile": "rollup -c rollup.npm.config.js",
+    "build:types": "run-s build:types:core build:types:downlevel",
+    "build:types:core": "tsc -p tsconfig.types.json",
+    "build:types:downlevel": "pnpm downlevel-dts build/types build/types-ts3.8 --to ts3.8",
+    "clean": "rimraf build coverage .rpt2_cache sentry-browser-*.tgz"
+  },
+  "dependencies": {
+    "@monitor-web/core": "1.0.0",
+    "@monitor-web/types": "1.0.0",
+    "@monitor-web/utils": "1.0.0",
+    "tslib": "2.5.2 || 1.14.1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
