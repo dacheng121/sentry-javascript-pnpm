@@ -1,0 +1,32 @@
+{
+  "name": "@monitor-web/integrations",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build/npm/cjs/index.js",
+  "module": "build/npm/esm/index.js",
+  "types": "build/npm/types/index.d.ts",
+  "scripts": {
+    "build": "run-p build:transpile build:types build:bundle",
+    "build:bundle": "ts-node scripts/buildBundles.ts --parallel",
+    "build:dev": "run-p build:transpile build:types",
+    "build:transpile": "rollup -c rollup.npm.config.js",
+    "build:pnpm": "rollup -c rollup.bundle.config.js",
+    "build:types": "run-s build:types:core build:types:downlevel",
+    "build:types:core": "tsc -p tsconfig.types.json",
+    "build:types:downlevel": "pnpm downlevel-dts build/npm/types build/npm/types-ts3.8 --to ts3.8"
+  },
+  "dependencies": {
+    "@monitor-web/core": "1.0.0",
+    "@monitor-web/types": "1.0.0",
+    "@monitor-web/utils": "1.0.0",
+    "localforage": "1.9.0",
+    "tslib": "2.5.2"
+  },
+  "devDependencies": {
+    "@monitor-web/browser": "1.0.0",
+    "chai": "4.3.4"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

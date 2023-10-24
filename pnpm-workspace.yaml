@@ -9,4 +9,5 @@ packages:
   # - 'packages/replay'
   - 'packages/integration-shims'
   - 'packages/browser'
+  - 'packages/integrations'
   

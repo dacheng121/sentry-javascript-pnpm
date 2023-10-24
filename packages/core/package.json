@@ -16,7 +16,7 @@
   "dependencies": {
     "@monitor-web/types": "1.0.0",
     "@monitor-web/utils": "1.0.0",
-    "tslib": "2.5.2 || 1.14.1"
+    "tslib": "2.5.2"
   },
   "keywords": [],
   "author": "",

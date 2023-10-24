@@ -22,7 +22,7 @@
     "@monitor-web/core": "1.0.0",
     "@monitor-web/types": "1.0.0",
     "@monitor-web/utils": "1.0.0",
-    "tslib": "^2.4.1 || ^1.9.3"
+    "tslib": "2.5.2"
   },
   "devDependencies": {
     "@monitor-web/integration-shims": "1.0.0",
